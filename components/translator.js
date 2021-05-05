@@ -15,10 +15,10 @@ var translationToBritishArray = [
       americanToBritishTitles
     ]
 
-    console.log( Object.entries(britishOnly).length)
-    console.log( Object.entries(americanOnly).length)
-    console.log( Object.entries(americanToBritishTitles).length)
-    console.log( Object.entries(americanToBritishSpelling).length)
+//    console.log( Object.entries(britishOnly).length)
+//    console.log( Object.entries(americanOnly).length)
+//    console.log( Object.entries(americanToBritishTitles).length)
+//    console.log( Object.entries(americanToBritishSpelling).length)
 
       //console.log(myFilter)
 
@@ -64,7 +64,7 @@ class Translator {
   //  console.log(sortFilter)
 
           var output = this.translateToBritish(input, sortFilter)
-          console.log(output, "HERE")
+          //console.log(output, "HERE")
           return output
           break;
 
@@ -78,7 +78,7 @@ class Translator {
 
           for(const [british, american] of Object.entries(britishOnly)){
 
-            myFilter[american] = british 
+            myFilter[british] = american 
 
          
         }
@@ -88,7 +88,7 @@ class Translator {
 
           for(const [american, british] of Object.entries(translationToAmericanArray[j])){
 
-          myFilter[american] = british 
+          myFilter[british] = american 
           
         }
 
@@ -119,7 +119,7 @@ class Translator {
 
     
           var output = this.translateToAmerican(input, sortFilter)
-          console.log(output, "HERE")
+          //console.log(output, "HERE")
           return output 
           break;
 
@@ -137,9 +137,9 @@ class Translator {
 
     //console.log(sortFilter)
 
-          for(const [american, british] of Object.entries(filter)){
+          for(const [british, american] of Object.entries(filter)){
             
-            console.log(american, british, input.toLowerCase().includes(british.toLowerCase()))
+         //   console.log(american, british, input.toLowerCase().includes(british.toLowerCase()))
 
            if(british == "football"){
              str = "YES"
@@ -181,15 +181,15 @@ class Translator {
                   if(originalValue[i] !== american[i]){
                   if(originalValue[i] === american[i].toUpperCase()){
                     finalValue[i] = originalValue[i]
-                    console.log(finalValue[i],
-                    american[i],
-                    originalValue[i],"deepEqual")
+                  //  console.log(finalValue[i],
+                  // american[i],
+                  //  originalValue[i],"deepEqual")
 
                   } 
                 } else if(originalValue[i] === american[i]){
                   finalValue[i] = american[i]
-                  console.log(finalValue[i],
-                    american[i],"not deepEqual")
+               //   console.log(finalValue[i],
+                //    american[i],"not deepEqual")
                 }
 
                 }
@@ -209,8 +209,8 @@ class Translator {
                
 
         }
-                      console.log(output)
-                      console.log(str)   
+                  //    console.log(output)
+                  //    console.log(str)   
 
 
     if(output == ""){
@@ -230,7 +230,7 @@ class Translator {
 
     
           for(const [american, british] of Object.entries(filter)){
-           console.log(american, british, input.toLowerCase().includes(british.toLowerCase()))
+         //  console.log(american, british, input.toLowerCase().includes(british.toLowerCase()))
 
            var americanTimeRegex = new RegExp('\\b\\d?\\d:\\d\\d\\b', "g")
            var originalTimeValue = input.match(americanTimeRegex)
@@ -253,7 +253,7 @@ class Translator {
               var regEx = new RegExp(`\\b${american}\\b`, "ig");
               var originalValue = input.match(regEx)
 
-              console.log(american, regEx, originalValue, "HERE")
+            //  console.log(american, regEx, originalValue, "HERE")
 
               if(originalValue == null){
                 if(american.includes(".")){
@@ -268,23 +268,23 @@ class Translator {
                     currentValue.push(input[counter])
 
                     if(finalValue[subCount] != undefined){
-                      console.log(finalValue[subCount],
-                    british[subCount],
-                    input[counter], currentValue) 
+                  //    console.log(finalValue[subCount],
+                //    british[subCount],
+                  //  input[counter], currentValue) 
 
                     if(british[subCount]){
                   if(input[counter] !== british[subCount]){
                   if(input[counter] === british[subCount].toUpperCase()){
                     finalValue[subCount] = input[counter]
-                    console.log(finalValue[subCount],
-                    british[subCount],
-                    input[counter],currentValue,"deepEqual")
+               //     console.log(finalValue[subCount],
+                 //   british[subCount],
+                  //  input[counter],currentValue,"deepEqual")
 
                   } 
                 } else if(input[counter] === british[subCount]){
                   finalValue[subCount] = british[subCount]
-                  console.log(finalValue[subCount],
-                    british[subCount],currentValue,"not deepEqual")
+           //       console.log(finalValue[subCount],
+             //       british[subCount],currentValue,"not deepEqual")
                 }
 
                 }
@@ -302,11 +302,11 @@ class Translator {
 
                   if(output == ""){
                 output = input.replace(currentValue.join(""), "<span class=\"highlight\">"+finalValue.join("")+"</span>")
-                                console.log(output)
+              //                  console.log(output)
 
               } else {
                 output = output.replace(currentValue.join(""), "<span class=\"highlight\">"+finalValue.join("")+"</span>")
-                                console.log(output)
+              //                  console.log(output)
 
               }
 
@@ -324,15 +324,15 @@ class Translator {
                   if(originalValue[i] !== british[i]){
                   if(originalValue[i] === british[i].toUpperCase()){
                     finalValue[i] = originalValue[i]
-                    console.log(finalValue[i],
-                    british[i],
-                    originalValue[i],"deepEqual")
+              //      console.log(finalValue[i],
+                //    british[i],
+                  //  originalValue[i],"deepEqual")
 
                   } 
                 } else if(originalValue[i] === british[i]){
-                  finalValue[i] = british[i]
-                  console.log(finalValue[i],
-                    british[i],"not deepEqual")
+            //      finalValue[i] = british[i]
+              //    console.log(finalValue[i],
+                //    british[i],"not deepEqual")
                 }
 
                 }
@@ -351,7 +351,7 @@ class Translator {
                         }
                           }
 
-                      console.log(output)   
+               //       console.log(output)   
 
          
 

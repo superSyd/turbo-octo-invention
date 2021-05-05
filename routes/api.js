@@ -21,7 +21,7 @@ module.exports = function (app) {
       if(input && myLocale){
         output = translator.translate(input, myLocale)
 
-      } else {
+      } else if(!input || !myLocale) {
         output = { error: 'Required field(s) missing' }
 
       }
